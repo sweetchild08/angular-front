@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header"><h1>This is home</h1></div>
+  <h2>Brands</h2>
+  <table class="w-full">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <!-- data -->
+      <tr *ngFor="let brand of brands">
+          <td>{{brand.name}}</td>
+          <td>{{brand.description}}</td>
+          <td>
+            <button>
+              <a [routerLink]="['/brand/'+brand.id+'/edit']"  >edit</a>
+            </button><button>view</button><button>delete</button>
+          </td>
+      </tr>
+    <!--end data  -->
+  </table>
+</div>

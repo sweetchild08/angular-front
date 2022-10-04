@@ -1,0 +1,40 @@
+<div class="container">
+  <div *ngIf="brand; else nodata">
+    <h3>Edit brand</h3>
+    <p>brand ID:{{ brandId }}</p>
+    <div class="formContainer">
+      <form #brandEditForm="ngForm" novalidate (ngSubmit)="updateBrand()">
+        {{message}}
+        <table>
+          <tr>
+            <td><label>Name</label></td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                [(ngModel)]="brand.name"
+                title="name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Description</label></td>
+            <td>
+              <input
+                type="text"
+                name="description"
+                [(ngModel)]="brand.description"
+                title="description"
+              />
+            </td>
+          </tr>
+        </table>
+        <div class="btn-group">
+            <button class="btn-error btn-mini" (click)="back()" type="button">Back</button>
+            <button class="btn-success btn-mini" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <ng-template #nodata>No data</ng-template>
+</div>
