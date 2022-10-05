@@ -28,7 +28,14 @@ export class BrandsService {
   updatebrand(id: any, brand: Brand | null): Observable<Brand> {
     return this.http.put<Brand>(environment.backend_url + '/brand/' + id, brand);
   }
-
+  // delete brand
+  deletebrand(id:number):Observable<string>{
+    return this.http.delete<string>(environment.backend_url+'/brand/'+id)
+  }
+  // add brand
+  addbrand(brand:object):Observable<Brand>{
+    return this.http.post<Brand>(environment.backend_url+'/brand',brand)
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.

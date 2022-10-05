@@ -9,13 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { BrandEditComponent } from './brand-edit/brand-edit.component';
 import { FormsModule } from '@angular/forms';
+import { BrandViewComponent } from './brand-view/brand-view.component';
+import { BrandAddComponent } from './brand-add/brand-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFountComponent,
-    BrandEditComponent
+    BrandEditComponent,
+    BrandViewComponent,
+    BrandAddComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { FormsModule } from '@angular/forms';
       { path: '', redirectTo:'/home', pathMatch:'full'},
       { path: 'home', component: LoginComponent },
       { path: 'brand/:brandId/edit', component: BrandEditComponent },
+      { path: 'brand/:brandId/view', component: BrandViewComponent },
       { path: '**', component: NotFountComponent }
     ])
   ],

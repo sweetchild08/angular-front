@@ -14,9 +14,15 @@
           <td>
             <button>
               <a [routerLink]="['/brand/'+brand.id+'/edit']"  >edit</a>
-            </button><button>view</button><button>delete</button>
+            </button>
+            <button>
+              <a [routerLink]="['/brand/'+brand.id+'/view']"  >view</a>
+            </button>
+            <button title="delete" (click)="delete(brand.id)">delete</button>
           </td>
       </tr>
     <!--end data  -->
   </table>
+  <hr>
+  <app-brand-add ></app-brand-add>
 </div>
